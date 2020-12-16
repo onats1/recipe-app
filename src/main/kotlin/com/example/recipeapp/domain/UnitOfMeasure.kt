@@ -12,5 +12,5 @@ data class UnitOfMeasure(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private val id: Long? = null,
 
-        private val unitOfMeasure: String
+        private val description: String
 )
