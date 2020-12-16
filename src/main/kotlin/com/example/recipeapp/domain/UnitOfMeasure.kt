@@ -10,7 +10,7 @@ data class UnitOfMeasure(
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private val id: Long? = null,
+        val id: Long? = null,
 
-        private val description: String
+        val description: String
 )

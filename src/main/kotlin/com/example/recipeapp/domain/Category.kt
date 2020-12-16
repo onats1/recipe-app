@@ -6,9 +6,9 @@ import javax.persistence.*
 data class Category(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private val id: Long? = null,
-        private val description: String,
+        val id: Long? = null,
+        val description: String,
 
-        @ManyToMany(mappedBy = "categories")
-        private val recipes: Set<Recipe>
+        @ManyToMany(mappedBy = "categories", fetch = FetchType.EAGER)
+        val recipes: Set<Recipe> = setOf()
 )

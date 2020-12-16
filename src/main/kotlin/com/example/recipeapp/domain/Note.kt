@@ -6,10 +6,11 @@ import javax.persistence.*
 data class Note (
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private val id: Long? = null,
+        var id: Long? = null,
 
         @OneToOne
-        private val recipe: Recipe,
+        var recipe: Recipe? = null,
+
         @Lob
-        private val recipeNotes: String
+        var recipeNotes: String
 )
