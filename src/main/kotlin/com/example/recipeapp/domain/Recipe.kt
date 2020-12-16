@@ -15,6 +15,13 @@ data class Recipe(
         private val url: String,
         private val directions: String,
 
+        @ManyToMany
+        @JoinTable(name = "recipe_category", joinColumns = [JoinColumn(name = "recipe_id")], inverseJoinColumns = [JoinColumn(name = "category_id")])
+        private val categories: Set<Category>,
+
+        @Enumerated(value = EnumType.STRING)
+        private val difficulty: Difficulty,
+
         @OneToOne(cascade = [CascadeType.ALL])
         private val note: Note,
 
